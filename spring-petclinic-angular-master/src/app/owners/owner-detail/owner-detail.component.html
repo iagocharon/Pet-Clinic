@@ -1,0 +1,27 @@
+<header class="page-header">
+  <h2>Información del Cliente</h2>
+</header>
+
+<div class="page">
+  <div class="client">
+    <div class="info">
+      <h2>{{ owner.firstName }} {{ owner.lastName }}</h2>
+      <p><strong>Dirección: </strong>{{ owner.address }}</p>
+      <p><strong>Ciudad: </strong>{{ owner.city }}</p>
+      <p><strong>Teléfono: </strong>{{ owner.telephone }}</p>
+    </div>
+    <div class="buttons">
+      <button class="button" (click)="gotoOwnersList()">< Volver</button>
+      <button class="button" (click)="editOwner()">Editar Cliente</button>
+      <button class="button" (click)="addPet(owner)">Agregar Mascota</button>
+    </div>
+  </div>
+  <div class="pets">
+    <h2>Mascotas</h2>
+    <table class="table table-striped">
+      <tr>
+        <app-pet-list *ngFor="let pet of owner.pets" [pet]="pet"></app-pet-list>
+      </tr>
+    </table>
+  </div>
+</div>

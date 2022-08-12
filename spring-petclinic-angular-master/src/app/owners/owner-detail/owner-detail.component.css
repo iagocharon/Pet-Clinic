@@ -1,0 +1,15 @@
+.info p {
+  margin: 0;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.buttons button {
+  margin-right: 10px;
+}
+
+.pets {
+  margin-top: 50px;
+}

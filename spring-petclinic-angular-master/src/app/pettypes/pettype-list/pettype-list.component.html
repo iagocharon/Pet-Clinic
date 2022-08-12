@@ -1,0 +1,31 @@
+<header class="page-header">
+  <h2>Tipos de Mascotas</h2>
+</header>
+
+<div class="page">
+  <div class="table">
+    <table id="pettypes">
+      <tbody>
+        <tr *ngFor="let pettype of pettypes">
+          <td class="name">
+            {{ pettype.name }}
+          </td>
+          <td class="buttons">
+            <button class="button" (click)="showEditPettypeComponent(pettype)">
+              Editar
+            </button>
+            <button class="button" (click)="deletePettype(pettype)">
+              Borrar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="isInsert">
+      <app-pettype-add (newPetType)="onNewPettype($event)">...</app-pettype-add>
+    </div>
+  </div>
+  <div>
+    <button class="button" (click)="showAddPettypeComponent()">Agregar</button>
+  </div>
+</div>

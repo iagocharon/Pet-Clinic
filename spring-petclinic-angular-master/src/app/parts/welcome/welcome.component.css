@@ -1,0 +1,56 @@
+.page {
+  background: linear-gradient(180deg, #cce0e9, #eee);
+  height: 100vh;
+  margin: 0;
+  padding-top: 100px;
+  padding-left: 300px;
+  padding-right: 500px;
+}
+
+.page h1 {
+  color: var(--light-grey);
+  font-weight: 300;
+}
+
+.page p {
+  margin-top: 30px;
+  color: var(--light-grey);
+  font-weight: 300;
+  line-height: 1.5em;
+  font-size: var(--fz-xl);
+}
+
+.options {
+  margin-top: 100px;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.6;
+}
+
+.background-image img {
+  height: 350px;
+  width: auto;
+}
+
+.link {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
+.link a {
+  color: var(--light-grey);
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--light-grey);
+  transition: all 300ms ease-in-out;
+}
+
+.link a:hover {
+  color: white;
+  background: var(--light-grey);
+  transition: all 300ms ease-in-out;
+}

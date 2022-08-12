@@ -1,0 +1,116 @@
+<header class="page-header">
+  <h2>Nuevo Veterinario</h2>
+</header>
+
+<div class="page">
+  <form id="vet" (ngSubmit)="onSubmit(vetForm.value)" #vetForm="ngForm">
+    <div class="form-group" hidden="true">
+      <input
+        type="text"
+        hidden="true"
+        class="form-control"
+        id="id"
+        [(ngModel)]="vet.id"
+        name="id"
+      />
+    </div>
+    <div
+      class="form-group has-feedback"
+      [class.has-success]="firstName.dirty && firstName.valid"
+      [class.has-error]="firstName.dirty && !firstName.valid"
+    >
+      <label for="firstName" class="col-2 control-label">Nombre</label>
+      <div class="col-10">
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          [(ngModel)]="vet.firstName"
+          minlength="2"
+          required
+          name="firstName"
+          #firstName="ngModel"
+        />
+        <span
+          class="glyphicon form-control-feedback"
+          [class.glyphicon-ok]="firstName.valid"
+          [class.glyphicon-remove]="!firstName.valid"
+          aria-hidden="true"
+        ></span>
+        <span
+          class="help-block"
+          *ngIf="firstName.dirty && firstName.hasError('required')"
+          >Nombre requerido</span
+        >
+        <span
+          class="help-block"
+          *ngIf="firstName.dirty && firstName.hasError('minlength')"
+          >El nombre debe tener por lo menos 2 caracteres de longitud</span
+        >
+      </div>
+    </div>
+    <div
+      class="form-group has-feedback"
+      [class.has-success]="lastName.dirty && lastName.valid"
+      [class.has-error]="lastName.dirty && !lastName.valid"
+    >
+      <label for="lastName" class="col-2 control-label">Apellido</label>
+      <div class="col-10">
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          [(ngModel)]="vet.lastName"
+          name="lastName"
+          minlength="2"
+          required
+          #lastName="ngModel"
+        />
+        <span
+          class="glyphicon form-control-feedback"
+          [class.glyphicon-ok]="lastName.valid"
+          [class.glyphicon-remove]="!lastName.valid"
+          aria-hidden="true"
+        ></span>
+        <span
+          class="help-block"
+          *ngIf="lastName.dirty && lastName.hasError('required')"
+          >Apellido requerido</span
+        >
+        <span
+          class="help-block"
+          *ngIf="lastName.dirty && lastName.hasError('minlength')"
+          >El apellido debe tener por lo menos 2 caracteres de longitud</span
+        >
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="form-group">
+        <label for="specialties" class="col-2 control-label"
+          >Especialidad
+        </label>
+        <div class="col-10">
+          <select
+            id="specialties"
+            name="specialties"
+            class="form-control"
+            [(ngModel)]="selectedSpecialty"
+          >
+            <option *ngFor="let spec of specialtiesList" [ngValue]="spec">
+              {{ spec.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-offset-2 col-10">
+        <br />
+        <button class="button" type="button" (click)="gotoVetList()">
+          < Atrás
+        </button>
+        <button class="button" type="submit">Guardar</button>
+      </div>
+    </div>
+  </form>
+</div>

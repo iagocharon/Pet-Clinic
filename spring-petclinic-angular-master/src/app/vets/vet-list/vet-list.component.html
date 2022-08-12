@@ -1,0 +1,38 @@
+<header class="page-header">
+  <h2>Veterinarios</h2>
+  <form class="d-flex" role="search">
+    <input type="search" placeholder="Buscar" (keyup)="filterVets($event)" />
+  </form>
+</header>
+
+<div class="page">
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Especialidad</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vet of vetsShown">
+          <td>{{ vet.firstName }} {{ vet.lastName }}</td>
+          <td>
+            <div *ngFor="let spec of vet.specialties">
+              {{ spec.name }}
+            </div>
+          </td>
+          <td class="buttons">
+            <button class="button" (click)="editVet(vet)">Editar</button>
+            <button class="button" (click)="deleteVet(vet)">Borrar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="add">
+    <button class="button" (click)="addVet()">Agregar Veterinario</button>
+  </div>
+</div>

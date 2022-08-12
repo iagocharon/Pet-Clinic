@@ -1,0 +1,96 @@
+nav {
+  position: fixed;
+  height: 100vh;
+  width: 220px;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--fz-sm);
+  font-weight: 400;
+}
+
+.logo {
+  width: 100%;
+  background-color: var(--orange);
+  font-size: var(--fz-xl);
+  font-weight: 600;
+  text-align: center;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu ul li {
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown::after {
+  content: "\203a";
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  transform: rotate(90deg) scale(1.2);
+}
+
+.dropdown.active::after {
+  transform: rotate(-90deg) scale(1.2);
+}
+
+.submenu {
+  max-height: 0;
+  padding: 0;
+  padding-left: 50px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.submenu.active {
+  max-height: 200px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+}
+
+.item {
+  padding: 0;
+}
+
+.item-wrapper {
+  padding: 16px 16px 4px;
+  transition: var(--transition);
+}
+
+.item svg {
+  height: 19px;
+  fill: var(--white);
+  margin-right: 12px;
+  transform: translateY(-3px);
+  transition: var(--transition);
+}
+
+.submenu li {
+  padding: 5px 0;
+  transition: var(--transition);
+}
+
+.submenu li:hover {
+  color: var(--orange);
+  transition: var(--transition);
+}
+
+.item-wrapper:hover {
+  color: var(--orange);
+  transition: var(--transition);
+}
+
+.item-wrapper:hover svg {
+  fill: var(--orange);
+  transition: var(--transition);
+}

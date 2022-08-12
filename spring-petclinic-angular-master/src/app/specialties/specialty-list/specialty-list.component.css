@@ -1,0 +1,43 @@
+.button {
+  margin-right: 10px;
+}
+
+.buttons {
+  padding: 10px 30px;
+  padding-right: 0;
+  width: 220px !important;
+}
+
+.table {
+  border: none;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--background-color);
+  overflow: hidden;
+}
+
+.name {
+  width: 100px !important;
+  padding: 10px 20px;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: var(--white);
+}
+
+tr {
+  border-bottom: 1px solid var(--background-color);
+}
+
+th {
+  padding: 0;
+}
+
+tr,
+td {
+  padding: 0;
+}
+
+td a {
+  font-weight: 600;
+}

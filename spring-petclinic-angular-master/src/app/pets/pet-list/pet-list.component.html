@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="info">
+    <div class="line">
+      <p><strong>Nombre</strong></p>
+      <p>{{ pet.name }}</p>
+    </div>
+    <div class="line">
+      <p><strong>Fecha de Nacimiento</strong></p>
+      <p>{{ correctDate(pet.birthDate) }}</p>
+    </div>
+    <div class="line">
+      <p><strong>Type</strong></p>
+      <p *ngIf="!deleteSuccess">{{ pet.type.name }}</p>
+    </div>
+    <div class="buttons">
+      <button class="button" (click)="editPet(pet)">Editar</button>
+      <button class="button" (click)="deletePet(pet)">Borrar</button>
+      <button class="button" (click)="addVisit(pet)">Agregar Visita</button>
+    </div>
+  </div>
+  <app-visit-list [visits]="pet.visits"></app-visit-list>
+</div>

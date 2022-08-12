@@ -1,0 +1,106 @@
+<header class="page-header">
+  <h2>Editar Mascota</h2>
+</header>
+
+<div class="page">
+  <form
+    class="form-horizontal"
+    (ngSubmit)="onSubmit(petForm.value)"
+    #petForm="ngForm"
+  >
+    <div class="form-group" hidden="true">
+      <input
+        type="text"
+        hidden="true"
+        class="form-control"
+        id="id"
+        [(ngModel)]="pet.id"
+        name="id"
+      />
+      <input
+        type="text"
+        hidden="true"
+        class="form-control"
+        id="owner"
+        [(ngModel)]="pet.owner"
+        name="owner"
+      />
+    </div>
+    <div class="form-group">
+      <label for="owner" class="col-2 control-label">Dueño</label>
+      <div class="col-10">
+        <input
+          id="owner_name"
+          name="owner_name"
+          class="form-control"
+          type="text"
+          value="{{ currentOwner.firstName }} {{ currentOwner.lastName }}"
+          readonly
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name" class="col-2 control-label">Nombre</label>
+      <div class="col-10">
+        <input
+          id="name"
+          name="name"
+          class="form-control"
+          type="text"
+          [(ngModel)]="pet.name"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="container">
+        <div class="row">
+          <div class="col-5 ps-0">
+            <label class="control-label">Fecha de Nacimiento</label>
+            <div>
+              <input
+                type="text"
+                placeholder="Datepicker"
+                class="form-control"
+                [ngModel]="pet.birthDate | date: 'dd/MM/yyyy'"
+                name="birthDate"
+                bsDatepicker
+              />
+            </div>
+          </div>
+          {{ pet.type.name }}
+          <div class="col-5 pe-0">
+            <label for="type" class="control-label">Tipo </label>
+            <div>
+              <select
+                id="type"
+                name="type"
+                class="form-control"
+                [(ngModel)]="pet.type"
+              >
+                <option *ngFor="let type of petTypes" [ngValue]="type">
+                  {{ type.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="form-group"></div>
+    </div>
+    <div class="form-group">
+      <div class="col-offset-2 col-10">
+        <br />
+        <button
+          class="button"
+          type="button"
+          (click)="gotoOwnerDetail(pet.owner)"
+        >
+          < Atrás
+        </button>
+        <button class="button" type="submit">Guardar</button>
+      </div>
+    </div>
+  </form>
+</div>

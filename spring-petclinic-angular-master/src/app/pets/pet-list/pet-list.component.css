@@ -1,0 +1,26 @@
+.button {
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+p {
+  margin: 0;
+}
+
+.line {
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.info {
+  margin-right: 15px;
+}
+
+app-visit-list {
+  margin-left: 15px;
+  flex-grow: 1;
+}

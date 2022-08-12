@@ -1,0 +1,19 @@
+<div class="table">
+  <table [hidden]="noVisits">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th class="description">Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let visit of visits">
+      <td>{{ visit.date }}</td>
+      <td vAlign="top" class="description">{{ visit.description }}</td>
+      <td class="buttons">
+        <button class="button" (click)="editVisit(visit)">Editar</button>
+        <button class="button" (click)="deleteVisit(visit)">Borrar</button>
+      </td>
+    </tr>
+  </table>
+</div>

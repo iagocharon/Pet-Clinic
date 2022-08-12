@@ -1,0 +1,12 @@
+.theme-green .bs-datepicker-head {
+  background-color: var(--orange) !important;
+}
+
+.theme-green .bs-datepicker-body table td.week span {
+  color: var(--orange);
+}
+
+.bs-datepicker-body table td span.is-other-month,
+.bs-datepicker-body table td.is-other-month span {
+  color: rgba(0, 0, 0, 0.25) !important;
+}

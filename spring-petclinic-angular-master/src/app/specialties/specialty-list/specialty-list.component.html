@@ -1,0 +1,38 @@
+<header class="page-header">
+  <h2>Especialidades</h2>
+</header>
+
+<div class="page">
+  <div class="table">
+    <table id="specialties">
+      <tbody>
+        <tr *ngFor="let specialty of specialties">
+          <td class="name">
+            {{ specialty.name }}
+          </td>
+          <td class="buttons">
+            <button
+              class="button"
+              (click)="showEditSpecialtyComponent(specialty)"
+            >
+              Editar
+            </button>
+            <button class="button" (click)="deleteSpecialty(specialty)">
+              Borrar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="isInsert">
+      <app-specialty-add (newSpeciality)="onNewSpecialty($event)"
+        >...</app-specialty-add
+      >
+    </div>
+  </div>
+  <div>
+    <button class="button" (click)="showAddSpecialtyComponent()">
+      Agregar
+    </button>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.table {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--black);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+td a {
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}

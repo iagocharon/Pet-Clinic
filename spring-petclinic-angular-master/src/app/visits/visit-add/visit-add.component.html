@@ -1,0 +1,86 @@
+<header class="page-header">
+  <h2>Nueva Visita</h2>
+</header>
+
+<div class="page">
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Tipo</th>
+          <th>Dueño</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>{{ currentPet.name }}</td>
+        <td>{{ currentPet.birthDate }}</td>
+        <td>{{ currentPetType.name }}</td>
+        <td>{{ currentOwner.firstName }} {{ currentOwner.lastName }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <form
+    id="visit"
+    class="form-horizontal"
+    (ngSubmit)="onSubmit(visitForm.value)"
+    #visitForm="ngForm"
+  >
+    <div class="form-group has-feedback">
+      <div class="form-group">
+        <div class="col-10">
+          <label class="control-label">Fecha</label>
+          <div>
+            <input
+              id="date"
+              type="text"
+              class="form-control"
+              [ngModel]="visit.date | date: 'dd/MM/yyyy'"
+              name="date"
+              bsDatepicker
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-2 control-label">Descripcion</label>
+        <div class="col-10">
+          <input
+            id="description"
+            name="description"
+            class="form-control"
+            type="text"
+            [(ngModel)]="visit.description"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-offset-2 col-10">
+        <input type="hidden" name="id" id="id" [(ngModel)]="visit.id" />
+        <input type="hidden" name="pet" id="pet" [(ngModel)]="visit.pet" />
+        <button class="button" type="button" (click)="gotoOwnerDetail()">
+          < Atrás
+        </button>
+        <button class="button" type="submit">Agregar</button>
+      </div>
+    </div>
+  </form>
+
+  <br />
+  <div class="col-12 text-left">
+    <p>
+      <b>Visitas Previas</b>
+    </p>
+  </div>
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <app-visit-list [visits]="currentPet.visits"></app-visit-list>
+      </div>
+    </div>
+  </div>
+</div>
